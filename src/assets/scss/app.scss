@@ -4,7 +4,11 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
-@import 'node_modules/include-media/dist/_include-media.scss';
+
+// Global styles
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
 
 // Global styles
 @include foundation-global-styles;
@@ -37,7 +41,7 @@
 // Containers
 @include foundation-accordion;
 // @include foundation-media-object;
-@include foundation-orbit;
+// @include foundation-orbit;
 // @include foundation-responsive-embed;
 // @include foundation-tabs;
 // @include foundation-thumbnail;
