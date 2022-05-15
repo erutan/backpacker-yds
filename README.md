@@ -11,17 +11,17 @@
 
 ## Installation
 
-To use this template, your computer needs:
+To run this site locally, your computer needs:
 
 - [NodeJS](https://nodejs.org/en/) (Version 12 or 14)
 - [Git](https://git-scm.com/)
 
 ### Manual Setup
 
-To manually set up the template, first download it with Git:
+To manually set up the site, first download it with Git:
 
 ```bash
-git clone https://github.com/foundation/foundation-zurb-template projectname
+git clone https://github.com/erutan/backpacker-yds projectname
 ```
 
 Then open the folder in your command line, and install the needed dependencies:
