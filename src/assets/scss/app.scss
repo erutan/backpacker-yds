@@ -10,11 +10,6 @@
 @include foundation-forms;
 @include foundation-typography;
 
-// Global styles
-@include foundation-global-styles;
-@include foundation-forms;
-@include foundation-typography;
-
 // Grids (choose one)
 // @include foundation-xy-grid-classes;
 // @include foundation-grid;
@@ -29,11 +24,12 @@
 // @include foundation-slider;
 // @include foundation-switch;
 // @include foundation-table;
+
 // Basic components
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
-// @include foundation-callout;
-// @include foundation-card;
+@include foundation-callout;
+@include foundation-card;
 // @include foundation-dropdown;
 // @include foundation-pagination;
 @include foundation-tooltip;
@@ -45,6 +41,7 @@
 // @include foundation-responsive-embed;
 // @include foundation-tabs;
 // @include foundation-thumbnail;
+
 // Menu-based containers
 @include foundation-menu;
 @include foundation-menu-icon;
