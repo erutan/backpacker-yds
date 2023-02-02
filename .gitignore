@@ -5,3 +5,5 @@ dist
 *.swp
 .cache
 .idea
+.yarn/install-state.gz
+.yarn/cache/*
