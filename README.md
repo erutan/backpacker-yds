@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d184086d-4a03-49a4-916e-95cb9eb7b859/deploy-status)](https://app.netlify.com/sites/cheery-hamster/deploys)
+
 # Built with ZURB Template
 
 - Handlebars HTML templates with Panini
