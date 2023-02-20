@@ -44,10 +44,22 @@ footer {
 	background: $black;
 }
 
-.glightbox {
+.lightbox-container {
+	margin: 2rem 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	column-gap: 10px;
+	row-gap: 10px;
+	li {
+		list-style-type: none;
+		display: inline;
+		transition: all .2s ease-in-out;
+		&:hover {
+			transform: scale(1.03);
+		}
+	}
 	img {
-		width: 32%;
-		height: auto;
-		margin-bottom: .5%;
+		border: 3px solid $black;
 	}
 }
