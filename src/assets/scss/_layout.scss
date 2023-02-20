@@ -43,3 +43,11 @@ footer {
 	grid-area: footer;
 	background: $black;
 }
+
+.glightbox {
+	img {
+		width: 32%;
+		height: auto;
+		margin-bottom: .5%;
+	}
+}
