@@ -10,7 +10,7 @@
   "author": "Foundation Yetinauts <contact@get.foundation> (https://get.foundation)",
   "license": "MIT",
   "dependencies": {
-    "foundation-sites": "^6.7.5",
+    "foundation-sites": "~6.7.5",
     "jquery": "^3.6.0",
     "motion-ui": "latest",
     "what-input": "^5.2.10"
