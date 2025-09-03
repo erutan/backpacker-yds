@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Read(/Users/erutan/Repos/xcc/**)",
+      "Read(/Users/erutan/Repos/xcc/**)",
+      "Bash(npm install)",
+      "Bash(npm run build:*)",
+      "Bash(npm run start:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

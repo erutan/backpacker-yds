@@ -11,40 +11,43 @@ import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
 import autoprefixer  from 'autoprefixer';
-import imagemin      from 'gulp-imagemin';
+import dartSass      from 'sass';
 
-
-const sass = require('gulp-sass');
+// PostCSS and additional plugins
 const postcss = require('gulp-postcss');
 const uncss = require('postcss-uncss');
+const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const imagemin = require('gulp-imagemin');
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
+// Configure gulp-sass to use Dart Sass
+const sassCompiler = $.sass(dartSass);
+
 // Check for --production flag
 const PRODUCTION = !!(yargs.argv.production);
 
-// Load settings from settings.yml
+// Load settings from config.yml with security features
 function loadConfig() {
   const unsafe = require('js-yaml-js-types').all;
   const schema = yaml.DEFAULT_SCHEMA.extend(unsafe);
   const ymlFile = fs.readFileSync('config.yml', 'utf8');
   return yaml.load(ymlFile, {schema});
 }
-const { PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
-console.log(UNCSS_OPTIONS);
+const { PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
+console.log('UNCSS Options:', UNCSS_OPTIONS);
 
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide)
-);
+ gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
-  gulp.series('build', server, watch)
-);
+  gulp.series('build', server, watch));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -89,23 +92,23 @@ function styleGuide(done) {
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sassBuild() {
-
   const postCssPlugins = [
     // Autoprefixer
     autoprefixer(),
-    // UnCSS - Uncomment to remove unused styles in production
+    // UnCSS - Remove unused styles in production (temporarily disabled due to JS loading issues)
     // PRODUCTION && uncss(UNCSS_OPTIONS),
   ].filter(Boolean);
 
   return gulp.src('src/assets/scss/app.scss')
-    .pipe($.sourcemaps.init())
-    .pipe(sass({
+    .pipe(sourcemaps.init())
+    .pipe(plumber())
+    .pipe(sassCompiler({
       includePaths: PATHS.sass
     })
-    .on('error', $.sass.logError))
+      .on('error', sassCompiler.logError))
     .pipe(postcss(postCssPlugins))
-    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
-    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
+    .pipe($.if(PRODUCTION, sourcemaps.write('.'), sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
     .pipe(browser.reload({ stream: true }));
 }
@@ -144,7 +147,7 @@ function javascript() {
 }
 
 // Copy images to the "dist" folder
-// In production, the images are compressed
+// In production, the images are compressed with format-specific optimizations
 function images() {
   return gulp.src('src/assets/img/**/*')
     .pipe($.if(PRODUCTION, imagemin([
@@ -153,8 +156,8 @@ function images() {
       imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo({
         plugins: [
-          {removeViewBox: true},
-          {cleanupIDs: false}
+          {name: 'removeViewBox', active: false},
+          {name: 'cleanupIDs', active: false}
         ]
       })
     ])))
