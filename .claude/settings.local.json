@@ -7,7 +7,9 @@
       "Read(/Users/erutan/Repos/xcc/**)",
       "Bash(npm install)",
       "Bash(npm run build:*)",
-      "Bash(npm run start:*)"
+      "Bash(npm run start:*)",
+      "Bash(grep:*)",
+      "Read(/Users/erutan/Repos/xcc/**)"
     ],
     "deny": [],
     "ask": []

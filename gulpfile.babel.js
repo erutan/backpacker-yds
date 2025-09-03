@@ -148,19 +148,20 @@ function javascript() {
 
 // Copy images to the "dist" folder
 // In production, the images are compressed with format-specific optimizations
+// NOTE: Temporarily disabled imagemin due to EPIPE errors on Netlify builds
 function images() {
   return gulp.src('src/assets/img/**/*')
-    .pipe($.if(PRODUCTION, imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.mozjpeg({quality: 85, progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
-      imagemin.svgo({
-        plugins: [
-          {name: 'removeViewBox', active: false},
-          {name: 'cleanupIDs', active: false}
-        ]
-      })
-    ])))
+    // .pipe($.if(PRODUCTION, imagemin([
+    //   imagemin.gifsicle({interlaced: true}),
+    //   imagemin.mozjpeg({quality: 85, progressive: true}),
+    //   imagemin.optipng({optimizationLevel: 5}),
+    //   imagemin.svgo({
+    //     plugins: [
+    //       {name: 'removeViewBox', active: false},
+    //       {name: 'cleanupIDs', active: false}
+    //     ]
+    //   })
+    // ])))
     .pipe(gulp.dest(PATHS.dist + '/assets/img'));
 }
 
