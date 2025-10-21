@@ -1,0 +1,34 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * museo-sans-rounded:
+ *   - http://typekit.com/eulas/00000000000000007735994a
+ *   - http://typekit.com/eulas/000000000000000077359965
+ *
+ * © 2009-2022 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2022-05-15 21:59:08 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=jwy1fst&ht=tk&f=9939.9941&a=8496606&app=typekit&e=css");
+
+@font-face {
+font-family:"museo-sans-rounded";
+src:url("https://use.typekit.net/af/d39206/00000000000000007735994a/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/d39206/00000000000000007735994a/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/d39206/00000000000000007735994a/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"museo-sans-rounded";
+src:url("https://use.typekit.net/af/7d47d7/000000000000000077359965/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/7d47d7/000000000000000077359965/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/7d47d7/000000000000000077359965/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n5&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:500;font-stretch:normal;
+}
+
+// local hosted
+
+@font-face {
+  font-family: "National Park";
+  src: url("/assets/fonts/NationalPark-Regular.otf");
+}

@@ -9,7 +9,11 @@
       "Bash(npm run build:*)",
       "Bash(npm run start:*)",
       "Bash(grep:*)",
-      "Read(/Users/erutan/Repos/xcc/**)"
+      "Read(/Users/erutan/Repos/xcc/**)",
+      "Bash(npm create astro@latest:*)",
+      "Bash(rm:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run astro:build:*)"
     ],
     "deny": [],
     "ask": []
