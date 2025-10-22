@@ -42,7 +42,7 @@
 
   --light-gray: #E4E1DD;
   --medium-gray: #B6AEA4;
-  --dark-gray: #96897B;
+  --dark-gray: #615a4d;
   --black: #2B2313;
   --white: #FCFBEE;
 
@@ -238,7 +238,7 @@ main h3 {
 
 /* Table of Contents */
 .table-of-contents {
-  border-left: 2px solid var(--pico-primary-focus);
+  border-left: 2px solid rgba(229, 75, 36, 0.3);
   padding-left: var(--pico-spacing);
 }
 
@@ -247,7 +247,6 @@ main h3 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--pico-contrast-hover);
   margin-bottom: 0.75rem;
 }
 
@@ -276,7 +275,7 @@ main h3 {
 
 .toc-link:hover {
   color: var(--primary-color);
-  border-left-color: var(--pico-primary-focus);
+  border-left-color: rgba(229, 75, 36, 0.5);
 }
 
 .toc-link.active {
