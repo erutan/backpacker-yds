@@ -105,6 +105,12 @@ h6 { font-size: 16px; }
   h6 { font-size: 16px; }
 }
 
+main h2 {
+  border-bottom: 3px solid var(--black);
+  display: block;
+  width: 100%;
+}
+
 p {
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -152,18 +158,18 @@ body {
 }
 
 .top-bar {
+  display: grid;
+  grid-template-columns: minmax(2.5%, auto) minmax(30rem, 80rem) minmax(2.5%, auto);
   grid-area: nav;
   background-color: var(--black);
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .menu {
-  width: 62rem;
+  grid-column: 2;
   display: flex;
   list-style: none;
   margin: 0;
@@ -350,8 +356,7 @@ summary {
   font-size: 1.125rem;
   color: var(--alert-color);
   background-color: var(--medium-gray);
-  transition: background-color 0.3s ease;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
   list-style: none;
 }
