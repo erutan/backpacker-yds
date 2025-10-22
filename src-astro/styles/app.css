@@ -9,7 +9,7 @@
   src: url("https://use.typekit.net/af/d39206/00000000000000007735994a/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff2"),
        url("https://use.typekit.net/af/d39206/00000000000000007735994a/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff"),
        url("https://use.typekit.net/af/d39206/00000000000000007735994a/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("opentype");
-  font-display: auto;
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
   font-stretch: normal;
@@ -20,7 +20,7 @@
   src: url("https://use.typekit.net/af/7d47d7/000000000000000077359965/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n5&v=3") format("woff2"),
        url("https://use.typekit.net/af/7d47d7/000000000000000077359965/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n5&v=3") format("woff"),
        url("https://use.typekit.net/af/7d47d7/000000000000000077359965/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n5&v=3") format("opentype");
-  font-display: auto;
+  font-display: swap;
   font-style: normal;
   font-weight: 500;
   font-stretch: normal;
@@ -29,6 +29,7 @@
 @font-face {
   font-family: "National Park";
   src: url("/assets/fonts/NationalPark-Regular.otf");
+  font-display: swap;
 }
 
 /* CSS Variables for theme */
@@ -323,6 +324,8 @@ footer {
   width: 100%;
   height: auto;
   display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
