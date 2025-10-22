@@ -299,7 +299,7 @@ footer {
   margin: 2rem 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   column-gap: 0.75rem;
   row-gap: 0.75rem;
@@ -350,8 +350,8 @@ summary {
   font-size: 1.125rem;
   color: var(--alert-color);
   background-color: var(--medium-gray);
-  transition: background-color 0.2s ease;
-  transition: color 0.2s ease;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
   position: relative;
   list-style: none;
 }
@@ -391,15 +391,6 @@ summary:hover::after {
 }
 
 details > :not(summary) {
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: var(--pico-background-color);
-}
-
-/* Callout styles */
-.callout {
-  font-size: 80%;
-  background-color: #FCFBEE;
-  border: 1px solid rgba(43, 35, 19, 0.25);
-  padding: 1rem;
-  margin: 0 0 1rem 0;
 }
