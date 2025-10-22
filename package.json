@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
-    "@picocss/pico": "^2.1.1",
+    "@yohns/picocss": "^2.2.10",
     "astro": "^5.14.8",
     "glightbox": "^3.3.1"
   },

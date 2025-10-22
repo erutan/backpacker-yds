@@ -20,7 +20,8 @@
       "Bash(npm run dev:*)",
       "WebFetch(domain:glightbox.biati.digital)",
       "WebSearch",
-      "WebFetch(domain:www.npmjs.com)"
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": []
