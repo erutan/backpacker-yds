@@ -17,7 +17,10 @@
       "Bash(env)",
       "Bash(fnm list:*)",
       "Read(//Users/erutan/.config/fish/**)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:glightbox.biati.digital)",
+      "WebSearch",
+      "WebFetch(domain:www.npmjs.com)"
     ],
     "deny": [],
     "ask": []
