@@ -1,12 +1,12 @@
 ---
 const { currentPath } = Astro.props;
-const isIndex = currentPath === '/' || currentPath === '/index.html';
-const isRelated = currentPath === '/related' || currentPath === '/related.html';
+const isIndex = currentPath === '/';
+const isRelated = currentPath === '/related/';
 ---
 
 <nav class="top-bar">
   <ul class="menu">
-    <li><a href="/index.html" class={isIndex ? 'active' : ''}>Proposed System</a></li>
-    <li><a href="/related.html" class={isRelated ? 'active' : ''}>Related Thoughts</a></li>
+    <li><a href="/" class={isIndex ? 'active' : ''}>Proposed System</a></li>
+    <li><a href="/related/" class={isRelated ? 'active' : ''}>Related Thoughts</a></li>
   </ul>
 </nav>
