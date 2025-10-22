@@ -7,6 +7,7 @@
     "dev": "astro dev --root . --srcDir src-astro",
     "start": "astro dev --root . --srcDir src-astro",
     "build": "astro build --root . --srcDir src-astro --outDir dist",
+    "astro:build": "astro build",
     "preview": "astro preview --root . --outDir dist"
   },
   "author": "Foundation Yetinauts <contact@get.foundation> (https://get.foundation)",
