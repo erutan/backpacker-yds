@@ -1,6 +1,6 @@
 %default-grid {
 	display: grid;
-	grid-template-columns: minmax(2.5%, auto) minmax(30rem, 62rem) minmax(2.5%, auto);
+	grid-template-columns: minmax(2.5%, auto) minmax(30rem, 80rem) minmax(2.5%, auto);
 //	@include media("<medium") {
 //		grid-template-columns: 10px 1fr 10px;
 //	}
@@ -11,11 +11,23 @@
 
 body {
 	@extend %default-grid;
-	grid-template-areas: 
+	grid-template-areas:
 		"nav nav nav"
 		"header header header"
-		". main ."
+		". content ."
 		"footer footer footer";
+}
+
+.content-wrapper {
+	grid-area: content;
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	column-gap: 2rem;
+	align-items: start;
+
+	@media screen and (max-width: 1024px) {
+		grid-template-columns: 1fr;
+	}
 }
 
 .top-bar {
@@ -35,8 +47,81 @@ header {
 }
 
 main {
-	grid-area: main;
 	margin-top: $global-margin * 3;
+	min-width: 0; // Prevent grid overflow
+
+	// Add scroll offset for anchor links to account for sticky nav
+	h2, h3 {
+		scroll-margin-top: 65px;
+	}
+}
+
+.sidebar {
+	position: sticky;
+	top: 5rem;
+	max-height: calc(100vh - 6rem);
+	overflow-y: auto;
+
+	@media screen and (max-width: 1024px) {
+		display: none;
+	}
+}
+
+// Table of Contents styles
+.table-of-contents {
+	border-left: 2px solid scale-color($primary-color, $lightness: 60%);
+	padding-left: 1rem;
+
+	.toc-title {
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		color: scale-color($body-font-color, $lightness: -20%);
+		margin-bottom: 0.75rem;
+	}
+
+	.toc-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.toc-item {
+		margin: 0;
+		padding: 0;
+	}
+
+	.toc-link {
+		display: block;
+		padding: 0.35rem 0;
+		font-size: 0.875rem;
+		line-height: 1.4;
+		color: scale-color($body-font-color, $lightness: 20%);
+		text-decoration: none;
+		transition: all 0.2s ease;
+		border-left: 2px solid transparent;
+		margin-left: -1rem;
+		padding-left: calc(1rem - 2px);
+
+		&:hover {
+			color: $primary-color;
+			border-left-color: scale-color($primary-color, $lightness: 40%);
+		}
+
+		&.active {
+			color: $primary-color;
+			font-weight: 600;
+			border-left-color: $primary-color;
+		}
+	}
+
+	.toc-level-h3 {
+		.toc-link {
+			padding-left: calc(1.75rem - 2px);
+			font-size: 0.8125rem;
+		}
+	}
 }
 
 footer {

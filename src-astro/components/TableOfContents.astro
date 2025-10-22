@@ -1,0 +1,52 @@
+---
+// This component will be populated client-side from the page headings
+---
+
+<nav class="table-of-contents" aria-label="Table of Contents">
+  <h2 class="toc-title">On This Page</h2>
+  <ul class="toc-list" id="toc-list">
+    <!-- Generated client-side -->
+  </ul>
+</nav>
+
+<script>
+  // Generate TOC from page headings
+  function generateTOC() {
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    const headings = main.querySelectorAll('h2, h3');
+    const tocList = document.getElementById('toc-list');
+
+    if (!tocList || headings.length === 0) return;
+
+    headings.forEach((heading, index) => {
+      // Add ID if it doesn't have one
+      if (!heading.id) {
+        const text = heading.textContent || '';
+        heading.id = text
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+      }
+
+      const li = document.createElement('li');
+      li.className = `toc-item toc-level-${heading.tagName.toLowerCase()}`;
+
+      const a = document.createElement('a');
+      a.href = `#${heading.id}`;
+      a.className = 'toc-link';
+      a.textContent = heading.textContent || '';
+
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+  // Run on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', generateTOC);
+  } else {
+    generateTOC();
+  }
+</script>

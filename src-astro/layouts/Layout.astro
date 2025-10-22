@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import '../styles/scss/app.scss';
 
 interface Props {
@@ -22,9 +23,15 @@ const currentPath = Astro.url.pathname;
   <body>
     <Navigation currentPath={currentPath} />
 
-    <main>
-      <slot />
-    </main>
+    <div class="content-wrapper">
+      <aside class="sidebar">
+        <TableOfContents />
+      </aside>
+
+      <main class="has-sidebar">
+        <slot />
+      </main>
+    </div>
 
     <script is:inline src="/assets/js/app-bundled.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
@@ -35,6 +42,35 @@ const currentPath = Astro.url.pathname;
         if (typeof GLightbox !== 'undefined') {
           const lightbox = GLightbox({
             moreLength: 0
+          });
+        }
+
+        // Add scroll highlighting for TOC
+        const tocLinks = document.querySelectorAll('.toc-link');
+        if (tocLinks.length > 0) {
+          const headings = document.querySelectorAll('main h2, main h3');
+
+          const observerOptions = {
+            rootMargin: '-80px 0px -80% 0px',
+            threshold: 0
+          };
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                tocLinks.forEach(link => {
+                  link.classList.remove('active');
+                  if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                  }
+                });
+              }
+            });
+          }, observerOptions);
+
+          headings.forEach(heading => {
+            observer.observe(heading);
           });
         }
       });
