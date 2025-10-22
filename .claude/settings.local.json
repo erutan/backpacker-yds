@@ -13,7 +13,10 @@
       "Bash(npm create astro@latest:*)",
       "Bash(rm:*)",
       "Bash(npm install:*)",
-      "Bash(npm run astro:build:*)"
+      "Bash(npm run astro:build:*)",
+      "Bash(env)",
+      "Bash(fnm list:*)",
+      "Read(//Users/erutan/.config/fish/**)"
     ],
     "deny": [],
     "ask": []
