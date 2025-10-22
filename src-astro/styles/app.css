@@ -200,11 +200,6 @@ header {
   grid-area: header;
 }
 
-main {
-  min-width: 0;
-  padding: 0 2rem 2rem 2rem;
-}
-
 main h2,
 main h3 {
   scroll-margin-top: 65px;
