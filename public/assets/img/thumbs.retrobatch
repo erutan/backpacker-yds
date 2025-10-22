@@ -111,11 +111,11 @@
 			U1N0cmluZwGUhAErCiRGaWxlTmFtZSSGhoY=
 			</data>
 			<key>inputLossyCompressionQuality</key>
-			<real>0.5</real>
+			<real>0.50759106874465942</real>
 			<key>inputOpenFolderOnFinish</key>
 			<true/>
 			<key>inputOverwriteExistingFiles</key>
-			<false/>
+			<integer>1</integer>
 			<key>inputPNGIndexColorSpeed</key>
 			<integer>1</integer>
 			<key>inputProgressive</key>
@@ -161,7 +161,7 @@
 			<key>outputOriginalFolderPath</key>
 			<string>/Users/erutan/Repos/backpacker-yds/public/assets/img/thumbs</string>
 			<key>outputUTI</key>
-			<string>original</string>
+			<string>org.webmproject.webp</string>
 			<key>outputsIds</key>
 			<array/>
 			<key>proccessId</key>
