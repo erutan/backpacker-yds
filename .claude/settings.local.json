@@ -16,7 +16,8 @@
       "Bash(npm run astro:build:*)",
       "Bash(env)",
       "Bash(fnm list:*)",
-      "Read(//Users/erutan/.config/fish/**)"
+      "Read(//Users/erutan/.config/fish/**)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []
