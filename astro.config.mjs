@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // https://astro.build/config
 export default defineConfig({
   srcDir: './src-astro',
-  outDir: './dist-astro',
+  outDir: './dist',
   publicDir: './public',
   integrations: [mdx()],
   vite: {

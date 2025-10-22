@@ -43,15 +43,17 @@ backpacker-yds/
 
 ### Start Development Server
 ```bash
+npm run dev
+# or
 npm run astro:dev
 ```
 This starts the Astro dev server at http://localhost:4321
 
 ### Build for Production
 ```bash
-npm run astro:build
+npm run build
 ```
-Builds the site to `dist-astro/` directory
+Builds the site to `dist/` directory (used by Netlify)
 
 ### Preview Production Build
 ```bash
@@ -64,8 +66,8 @@ Preview the built site before deployment
 The original Gulp-based build is still available:
 
 ```bash
-npm start          # Development with BrowserSync
-npm run build      # Production build
+npm start           # Development with BrowserSync
+npm run gulp:build  # Production build to dist/ (old version)
 ```
 
 ## Key Changes from Original
