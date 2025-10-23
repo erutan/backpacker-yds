@@ -19,7 +19,18 @@ const currentPath = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A proposal to update the Yosemite Decimal System (YDS) to better describe off-trail hiking / backpacking terrain, e.g. Class 2 and 3 with fall risk & terrain modifiers.">
     <title>{title}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+    <!-- Preconnect to Adobe Typekit for faster font loading -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="dns-prefetch" href="https://use.typekit.net">
+
+    <!-- Load Adobe Typekit CSS asynchronously to avoid render blocking -->
+    <link rel="preload" href="https://p.typekit.net/p.css?s=1&k=jwy1fst&ht=tk&f=9939.9941&a=8496606&app=typekit&e=css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://p.typekit.net/p.css?s=1&k=jwy1fst&ht=tk&f=9939.9941&a=8496606&app=typekit&e=css"></noscript>
+
+    <!-- Load GLightbox CSS asynchronously to avoid render blocking -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"></noscript>
   </head>
   <body>
     <Navigation currentPath={currentPath} />
@@ -34,9 +45,9 @@ const currentPath = Astro.url.pathname;
       </main>
     </div>
 
-    <script is:inline src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js" defer></script>
 
-    <script is:inline>
+    <script is:inline defer>
       // Initialize GLightbox after page loads
       document.addEventListener('DOMContentLoaded', function() {
         if (typeof GLightbox !== 'undefined') {

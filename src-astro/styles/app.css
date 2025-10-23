@@ -1,8 +1,7 @@
 /* Import PicoCSS (Yohn's Fork) - Conditional Light Theme */
 @import "@yohns/picocss/css/pico.conditional.min.css";
 
-/* Import fonts */
-@import url("https://p.typekit.net/p.css?s=1&k=jwy1fst&ht=tk&f=9939.9941&a=8496606&app=typekit&e=css");
+/* Fonts loaded asynchronously via HTML head - see Layout.astro */
 
 @font-face {
   font-family: "museo-sans-rounded";
