@@ -351,8 +351,8 @@ summary {
   padding: 1.25rem 2.5rem 1.25rem var(--pico-spacing);
   cursor: pointer;
   font-size: 1.125rem;
-  color: var(--alert-color);
-  background-color: var(--medium-gray);
+  color: var(--black);
+  background-color: var(--warning-color);
   transition: all 0.3s ease;
   position: relative;
   list-style: none;
@@ -381,7 +381,7 @@ summary::after {
   transform: translateY(-50%);
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--black);
 }
 
 details[open] summary::after {
