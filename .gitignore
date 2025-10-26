@@ -7,3 +7,4 @@ dist
 .idea
 .yarn/install-state.gz
 .yarn/cache/*
+_artifacts/unsorted/*
