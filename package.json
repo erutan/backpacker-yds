@@ -12,9 +12,9 @@
   "author": "Foundation Yetinauts <contact@get.foundation> (https://get.foundation)",
   "license": "MIT",
   "dependencies": {
-    "@astrojs/mdx": "^4.3.7",
+    "@astrojs/mdx": "^4.3.12",
     "@yohns/picocss": "^2.2.10",
-    "astro": "^5.14.8",
+    "astro": "^5.16.4",
     "astro-compress": "^2.3.8",
     "glightbox": "^3.3.1"
   },
