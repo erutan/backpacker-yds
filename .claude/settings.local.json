@@ -24,7 +24,10 @@
       "Bash(npm uninstall:*)",
       "Bash(git rev-list:*)",
       "Bash(git cat-file:*)",
-      "Bash(sort:*)"
+      "Bash(sort:*)",
+      "Bash(npx astro:*)",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/astro/package.json''\\).version\\)\")",
+      "Bash(npx:*)"
     ],
     "deny": [],
     "ask": []
