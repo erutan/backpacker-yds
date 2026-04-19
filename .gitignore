@@ -4,6 +4,7 @@ npm-debug.log
 dist
 *.swp
 .cache
+.astro
 .idea
 .yarn/install-state.gz
 .yarn/cache/*
