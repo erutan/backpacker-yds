@@ -370,12 +370,6 @@ footer {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .lightbox-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Details/Summary (accordion replacement) */
 details {
   margin-bottom: var(--pico-spacing);
