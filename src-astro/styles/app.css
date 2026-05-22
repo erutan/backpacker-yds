@@ -217,7 +217,7 @@ header {
 
 main h2,
 main h3 {
-  scroll-margin-top: 65px;
+  scroll-margin-top: 85px;
 }
 
 /* Pico v2 defaults to list-style: square for ul li — restore disc for content lists */
