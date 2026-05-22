@@ -158,7 +158,7 @@ body {
 .content-wrapper {
   grid-area: content;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 260px 1fr;
   column-gap: 2rem;
   align-items: start;
   /* Pico's `body > main { padding-block }` doesn't reach our nested <main>;
