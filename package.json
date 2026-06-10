@@ -13,8 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "@anyblades/pico": "^2.2.0-beta",
-    "@astrojs/mdx": "^5.0.6",
-    "astro": "^6.3.7",
+    "@astrojs/mdx": "^6.0.3",
+    "astro": "^6.4.5",
     "astro-compress": "^2.3.8",
     "glightbox": "^3.3.1"
   },
